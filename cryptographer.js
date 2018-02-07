@@ -36,10 +36,14 @@ function convert() {
     var str = input.toLowerCase();
     
     for (var i = 0; i < input.length; i++) {
-        str = str.replace(en[i], gr[i]);
+        while (str.indexOf(en[i]) != -1) {
+            str = str.replace(en[i], gr[i]);
+        }
     }
     for (var i = 0; i < input.length; i++) {
-        str = str.replace(gr[i], crypto[i]);
+        while (str.indexOf(gr[i]) != -1) {
+            str = str.replace(gr[i], crypto[i]);
+        }
     }
     
     output.innerText = str.toUpperCase();
